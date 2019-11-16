@@ -1,5 +1,5 @@
 # Deaf_and_Dumb
-Initialising new project respository for Deaf and dump 
+<h3>Initialising new project respository for Deaf and dump</> 
 
 Used to animate the common english language to sign animation for Deaf ad dump people.
 
@@ -11,12 +11,21 @@ Just run below command from Anaconda prompt or python terminal to install all th
 more info : 
 https://stackoverflow.com/questions/7225900/how-to-install-packages-using-pip-according-to-the-requirements-txt-file-from-a
 
-Decription:
+After installing all the packages just run the app.py file from working directory from anaconda prmopt
+
+``` python app.run ```
+
+<h3>Decription:</>
 1. The programe converts the speech to sign language and displays it on screen. 
 2. steps aenvolved are converting the audio information coming from microphone to text and then generating the animation for each letter present in the text.
 
 Note: this version shows animation for each letter in the sentense. for word level or even sentense level work is in progress.
 
-Video Demo ca nbe see nat below link
+Video Demo can be seen at below link or refer mp4 file.
+https://github.com/VaibhavKhamgaonkar/Deaf_and_Dumb/blob/master/New_Demo.mp4
+
+
+References:
+Kaggle for static hand gesture images 
 
 
