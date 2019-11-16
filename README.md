@@ -1,5 +1,5 @@
 # Deaf_and_Dumb
-<h3>Initialising new project respository for Deaf and dump</> 
+Initialising new project respository for Deaf and dump
 
 Used to animate the common english language to sign animation for Deaf ad dump people.
 
@@ -15,7 +15,7 @@ After installing all the packages just run the app.py file from working director
 
 ``` python app.run ```
 
-<h3>Decription:</>
+Decription:
 1. The programe converts the speech to sign language and displays it on screen. 
 2. steps aenvolved are converting the audio information coming from microphone to text and then generating the animation for each letter present in the text.
 
