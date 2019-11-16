@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3>Sign Language Animation </h3></br>  
+
+<span class="text-muted">Block Diagram</span>      
+<img width="840" height="420" class="content-section" src="{{ url_for ('static', filename = 'blockDiag.png') }}" type="image" controls></img>
+
+<div class = 'container'> 
+        <div class="article-content">
+            Following process is involved 
+            <small class="text-muted">
+                The process involves:
+                i. Audio to Text conversion
+                ii. Mapping the Text to a relevant sign language animation using NLP and Predictive models.
+                iii. Display the animation on screen
+            </small>
+            Audio to Text conversion can be done by using cloud APIs or offline python packages, build using Deep learning technologies. Once the audio is converted into Text, the next step is to map the text to the suitable animation present in the repository. This can be achieved using either NLP techiques, Predictive modeling or getting the similarity score using cosine similarity function.     
+            Once the mapping is done, the respective sign animation can be displayed on the screen.
+        </div></br>
+
+</div> 
+{% endblock content %}

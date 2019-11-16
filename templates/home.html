@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for post in posts %}
+        <!--<h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+        <p>by : {{ post.author }}</p> -->
+        <article class="media content-section">
+            <div class="media-body">
+              <div class="article-metadata">
+                <a class="mr-2" href="#">{{ post.author }}</a>
+                <!--<small class="text-muted">{{ post.content }}</small> -->
+              </div>
+              <h4><a class="article-title" href="#">{{ post.title }}</a></h4>
+              <p class="article-content">{{ post.content }}</p>
+            </div>
+          </article>
+        
+    {% endfor %}
+
+    <div class="form-data">
+      <form method="POST" action="" enctype="multipart/form-data" name='submit' value = 'Process'>
+        {{ form.hidden_tag() }}
+        <div class='btn'>
+            <input type="submit" name="submit" value="Test Mic" class='btn btn-outline-info'>
+            <!--{{ form.submit(class='btn btn-outline-info')}}-->
+        </div>
+      </form>
+      <div class="content-section">
+        {% if MicTestingFlag %}
+          <p class="text-muted"> Following Recording device detected. Kindly specify the <b>device Id</b> in the text box for Recording.</p>
+        {% endif %}
+          <div class="bs-example col-md-12">
+            <article class="content-section">
+              <table class="table table-hover" style="width:100%">
+                <tr>
+                  <th>Device Name</th>
+                  <th>Device Id</th>
+                </tr>
+                {% for (k,v) in micLists.items() %}
+                  <div class="article-title">
+                        <tr>
+                          <td>{{ k }}</td>
+                          <td>{{v}}</td>
+                        </tr>
+                  </div>
+                {% endfor %}
+              </table>    
+            </article>
+          </div>
+        <form method="POST" action="" enctype="multipart/form-data" name='submit' value = 'Process'>
+          {{ form.hidden_tag() }}
+          <fieldset class="form-group">
+            <!--<span class="border-bottom mb-4"> Enter Device Id</span>-->
+            <div class="form-group">
+              {{ testMicrophone.deviceId.label(class="form-control-label")}}
+              {{ testMicrophone.deviceId(class="form-control form-control-lg")}}
+            </div>
+          </fieldset>
+          <div class='btn'>
+              <!--<textarea class="input">Enter Device Id</textarea>-->
+              <input type="submit" name="submit" value="Save" class='btn btn-outline-info'>
+              <!--{{ testMicrophone.submit(class='btn btn-outline-info')}}-->
+          </div>  
+          
+      </div> 
+      
+      </form>
+
+
+      <form method="POST" action="" enctype="multipart/form-data" name='submit' value = 'Process'>
+        {{ form.hidden_tag() }}
+        <div class='btn'>
+          {% if not startRecodingFlag %}
+            <input type="submit" name="submit" value="Record" class='btn btn-secondary' aria-hidden="true"  >
+          {% endif %}  
+            <!--{{ form.submit(class='btn btn-outline-info')}}-->
+        </div>
+      </form>
+
+      <div class="media-body">
+        {% if startRecodingFlag %}
+          <span class="text-muted">Say Something</span>
+          <img width="1080" height="540" class="content-section" src="{{ url_for ('static', filename = 'spectrum.gif') }}" type="image" controls></img>
+              
+          <form method="POST" action="" enctype="multipart/form-data" name='submit' value = 'Process'>
+            {{ form.hidden_tag() }}
+            <div class='btn'>
+                <input type="submit" name="submit" value="Stop" class='btn btn-primary'>
+                <!--{{ form.submit(class='btn btn-outline-info')}}-->
+            </div>
+          </form>
+          {% endif %}
+
+      </div>
+      <div class="content-section">
+        <table class="table table-hover" style="width:100%">
+          <tr>
+            <th>Predicted Text</th>
+          </tr>
+          
+          <div class="article-title">
+            <tr>
+              <td><p class="text-muted"> {{predictedText}}</p></td>
+            </tr>
+          </div>
+        </table>
+        <div class="media-body">
+          {% if retFlag %}
+            <img width="200" height="200" class="content-section" src="{{ url_for ('static', filename = 'output/output.gif') }}" type="image" controls></img>
+          {% endif %}
+        </div>
+      </div>
+
+        
+     
+    </div>
+
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Start Recording
+  </button>-->
+  
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img width="840" height="420" class="content-section" src="{{ url_for ('static', filename = 'spectrum.gif') }}" type="image" controls></img>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Stop</button>-->
+          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+        <!--</div>
+      </div>
+    </div>
+  </div>-->
+
+
+    <!--<div class="col-md-4">
+        <div class="content-section">
+          <p class='text-muted'>Click the Process button for starting processing.
+            <form method="POST", action="">
+                {{ form.hidden_tag() }}
+                <div class='form-group'>
+                    {{ form.submit(class='btn btn-outline-info')}}
+                </div>
+              </form>    
+          </p>
+        </div>
+    </div>
+    rounded-circle account-img
+    -->
+
+
+
+    <!--<div class= "content">
+      <form method="POST", action="">
+        {{ form.hidden_tag() }}
+        <fieldset class='form-group'>
+          
+        </fieldset>
+        <div class='form-group'>
+            {{ form.submit(class='btn btn-outline-info')}}
+        </div>
+      </form>
+
+    </div>-->
+
+
+{% endblock content %}
