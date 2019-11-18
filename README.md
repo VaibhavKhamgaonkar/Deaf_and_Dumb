@@ -13,7 +13,7 @@ https://stackoverflow.com/questions/7225900/how-to-install-packages-using-pip-ac
 
 After installing all the packages just run the app.py file from working directory from anaconda prmopt
 
-``` python app.run ```
+``` python app.py ```
 
 Decription:
 1. The programe converts the speech to sign language and displays it on screen. 
