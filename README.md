@@ -1,5 +1,6 @@
 # Deaf_and_Dumb
 Initialising new project repository for differently abled (Deaf and dumb) people.
+<br><br>
 **Overview:**
 The project focuses on generating animation of the sign language from commonly spoken (English) language i.e. converting speech or sound into gesture language (sign language).
 
