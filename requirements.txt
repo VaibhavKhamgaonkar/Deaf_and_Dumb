@@ -1,7 +1,7 @@
 numpy==1.16.4
 SpeechRecognition==3.8.1
 WTForms==2.2.1
-opencv_python==4.1.1.26
+opencv_python==4.2.0.32
 Flask==1.1.1
 Flask_WTF==0.14.2
 imutils==0.5.3
